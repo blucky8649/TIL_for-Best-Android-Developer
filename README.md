@@ -6,6 +6,7 @@
 * [Scanner vs BufferedReader, which is the better one?](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Kotlin/%EC%9E%85%EB%A0%A5%EA%B0%92%20%EC%B2%98%EB%A6%AC%20%EB%B0%A9%EB%B2%95.md)
 
 ## Android
+* [뷰 결합(View Binding)](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Android/%EB%B7%B0%20%EB%B0%94%EC%9D%B8%EB%94%A9.md)
 
 ## Jetpack Compose
 * [Jetpack Compose 둘러보기](https://github.com/blucky8649/AboutComposeTodayLearned/blob/master/README.md)
