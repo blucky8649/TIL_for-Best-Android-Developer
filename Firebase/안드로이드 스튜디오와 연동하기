@@ -1,0 +1,56 @@
+안녕하세요! Firebase의 **Firestore DB**를 이용하여 서버없이 데이터를 저장하는 법에 대한 포스팅을 계획중입니다.
+
+따라서 이번 장에서는 Firebase 프로젝트를 생성하고, 안드로이스 스튜디오와 연동하는 **아주 간단한 방법**을 알려드릴겁니다.
+
+
+## What is Firebase ?
+2014년도에 구글에서 인수한 모바일, 웹 애플리케이션 개발 플랫폼입니다. 모바일 앱 개발에 필요한 인증, DB, 푸시 알림, 저장소, API등의 기능을 제공해주어 간단한 서버리스(server-less) 앱을 만드는데 큰 도움을 주는 플랫폼입니다.
+
+## Let's get started!
+
+### 프로젝트 및 데이터 생성
+[Firebase 사이트 이동](https://firebase.google.com/)
+위 링크를 타고 가서 `Get started`를 눌러 다음 페이지로 이동해 주신 다음 `프로젝트 추가`를 눌러 프로젝트를 하나 생성합니다.
+
+프로젝트를 만드셨다면 `Cloud Firestore`탭으로 들어가서 `데이터베이스 만들기`를 누릅니다.
+<div> <img src ="https://images.velog.io/images/blucky8649/post/25eb0bd3-8533-421e-8c9b-37669b04f05b/image.png" width = 700> </div> 
+
+저희는 가볍게 학습해볼 것이기 때문에 `테스트 모드에서 시작`을 체크하고 넘어갑니다.
+
+<div> <img src ="https://images.velog.io/images/blucky8649/post/f9bbed9b-26ee-4530-92b0-7721567b9f62/image.png" width = 700> </div> 
+
+위치 설정은 기본값인 nam5(us-centural)로 하고 `사용 설정`을 누르겠습니다.
+
+<div> <img src ="https://images.velog.io/images/blucky8649/post/bcb5cb54-8c0c-4b7a-bf6a-a54f35a482ec/image.png" width = 700> </div> 
+
+이제 다음과 같은 DB가 만들어 졌습니다. 여기서 홈페이지 설정은 끝이 납니다.
+
+### 안드로이드 스튜디오 Firebase 연결
+
+안드로이드 스튜디오로 와서 **프로젝트를 하나 생성**합니다.
+
+그 다음 상단 메뉴에서 **Tools -> Firebase** 순으로 클릭합니다.
+
+<div> <img src ="https://images.velog.io/images/blucky8649/post/1a90e4ac-a5cf-4336-9a92-9e3dea409791/image.png" height = 700> </div>
+
+그러면 좌측에 위와같은 창이 뜰겁니다. 이번 장에서는 Firestore를 사용할 것이기 때문에 `Firestore`를 클릭합니다.
+<div> <img src ="https://images.velog.io/images/blucky8649/post/701ff5ee-6646-4cf4-9ff2-a52cdc671bc9/image.png" height = 700> </div>
+
+그 다음, 저희는 Kotlin을 사용하여 개발할 것이기 때문에 두번째 메뉴를 누릅니다.
+
+<div> <img src ="https://images.velog.io/images/blucky8649/post/08b14ce0-f146-433c-981b-d02059587881/image.png" width = 500> </div>
+
+일단 `CONNECT TO FIREBASE` 를 눌러 Firebase 프로젝트와 연동을 해야합니다. 클릭해주고 창이 뜨면 `Build` 선택.
+
+다음, 프로젝트 선택창이 뜬다면 아까 만들어 둔 프로젝트를 클릭하여 연동해줍시다!
+
+<div> <img src ="https://images.velog.io/images/blucky8649/post/2355188f-b373-4dca-bfd7-4aa465f04492/image.png" width = 500> </div>
+
+그 다음 이 창이 뜰텐데, 연결을 눌러주면 프로젝트 연결이 끝납니다.
+<div> <img src ="https://images.velog.io/images/blucky8649/post/ed7e634d-b3db-4cf5-95b9-523f6fd5354a/image.png" width = 500> </div>
+
+1번 항목이 `Connected`로 바뀌었다면 성공입니다.
+
+그 다음 항목에 있는 `ADD THE CLOUD FIRESTORE SDK TO YOUR APP` 을 눌러줍니다. 이는 안드로이드 프로젝트에 Firestore에 필요한 라이브러리, 설정 등을 자동으로 해줍니다.`ACCEPT CHANGES`를 눌러주면 기본적인 안드로이드 스튜디오 FIREBASE 연결은 끝이 나게 됩니다.
+
+다음 포스팅 에서는 `코루틴`을 활용하여 직접 Firestore의 데이터를 비동기 조작해보는 시간을 가져보겠습니다.
