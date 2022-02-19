@@ -1,0 +1,165 @@
+백준 알고리즘 문제를 풀려면 주어지는 입력값에 대한 처리를 해야합니다.
+따라서 이번 포스팅은 주어지는 입력값 처리 방법에 대해서 알아볼게요.
+
+## Scanner Vs BufferedReader ?
+백준 문제를 푸실 때, 대부분 Scanner와 BufferedReader를 이용하여 알고리즘 문제를 푸실거라 생각합니다.
+그렇다면, 둘의 차이는 무엇이고, 어떤 장단점이 있을까요??
+
+
+## Scanner
+```
+blucky8649
+26
+```
+위와 같은 입력값이 있다고 가정할 때, 일반적으로 스캐너를 사용할 때 다음과 같이 사용합니다.
+```kotlin
+fun main(args: Array<String>) = with(Scanner(System.`in`)) {
+    
+    val name = nextLine()
+    val age = nextInt()
+
+    println("name: $name, age: $age")
+
+}
+
+<output>
+name: blucky8649, age: 26
+```
+다음과 같은 입력도 처리할 수 있습니다.
+```kotlin
+fun main(args: Array<String>) = with(Scanner(System.`in`)) {
+    val arr = ArrayList<Int>()
+    repeat (5) {
+        arr.add(nextInt())
+    }
+    println("Contents Of Array: $arr")
+}
+
+input: 10 20 30 40 50
+output: Contents Of an Array: [10, 20, 30, 40, 50]
+```
+
+### Scanner의 장점
+* `nextInt()`, `nextLine()`등을 통하여 **입력 받은 값의 자료형을 손쉽게 지정**할 수 있다.
+* 띄워쓰기로 구분되어있는 Integer도 `nextInt()`로 손 쉽게 가공할 수 있다.
+
+### Scanner의 단점
+* 키보드의 입력을 바로바로 전송하는 원리기 때문에 속도가 **느리다.**
+
+## BufferedReader
+`Scanner`의 **느린 단점을 보완**하기 위해서 사용하는 것이 바로 `BufferedReader` 입니다.
+`BufferedReader`는 이름 그대로 입력값을 **Buffer에 보관하였다가 전송하는 방식**이라서 Scanner보다 효율성이 많이 개선되었습니다. BufferedReader는 아래와 같이 사용합니다.
+
+```kotlin
+fun main(args: Array<String>) = with(System.`in`.bufferedReader()) {
+    val name = readLine()
+    val age = readLine().toInt()
+
+    println("name: $name, age: $age")
+}
+```
+코틀린에서는 간결하고 가독성 있게 작성할 수 있으나, 사실 자바로 작성하게 된다면 **상당한 보일러 플레이트 코드**와 마주하게됩니다.
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String name = br.readLine();
+        int age = Integer.parseInt(br.readLine());
+
+        System.out.println("name: "+ name + " age: " + age);
+    }
+}
+```
+
+Scanner에서는 `nextInt()`로 입력받는 문자열을 바로바로 가공할 수 있었으나, BufferedReader는 `readLine()`만 사용할 수 있으며, 이는 무조건 **String 자료형으로만** 받아올 수 있습니다.
+따라서 Integer 형태로 다시 변환해주는 코드가 늘어나게 되는 것이죠. **단점**이라 할 수 있겠네요.
+그렇다면 아래와 같은 입력값은 어떻게 처리해야할까요?
+```
+10 20 30 40 50
+```
+
+여기서도 Scanner와 대조되는 **BufferedReader의 단점**이 드러나게 됩니다. BufferedReader에서 띄워쓰기로 구분된 Integer를 가공하려면 `StringTokenizer`를 사용해야 합니다.
+```kotlin
+import java.util.StringTokenizer
+
+fun main(args: Array<String>) = with(System.`in`.bufferedReader()) {
+    val arr = ArrayList<Int>()
+    val st = StringTokenizer(readLine())
+
+    while (st.hasMoreTokens()) {
+        arr.add(st.nextToken().toInt())
+    }
+    println("Contents Of an Array: $arr")
+}
+input: 10 20 30 40 50
+output: Contents Of Array: [10, 20, 30, 40, 50]
+```
+
+### BufferedReader의 장점
+* 버퍼에 저장해놓고 전송하는 방식이기 때문에 **빠르다.**
+
+### BufferedReader의 단점
+* 수 많은 **보일러 플레이트 코드**가 존재한다.
+* 경우에 따라 `StringTokenizer`를 사용해야 한다.
+
+## 그러면 무엇을 사용해야 할까?
+무조건 **BufferedReader**를 추천드립니다. 물론 위에서 언급한 단점이 있긴 하지만, 프로그램에서는 효율성만큼 중요한건 없다고 봅니다.
+
+<br>
+
+## 번외 : 알고리즘 풀 때, 입력 꿀팁
+
+### BufferedReader, 더 간결하게 사용하자
+알고리즘 문제를 푸실 때, BufferedReader를 대부분 아래와 같이 선언하실 겁니다.
+```kotlin
+fun main(args: Array<String>) = with(System.`in`.bufferedReader()) {
+    val name = readLine()
+    val age = readLine().toInt()
+
+    println("name: $name, age: $age")
+}
+```
+
+그러나 여기서 더 간결하게 구현할 수 있습니다. **readln()**을 사용하세요.
+```kotlin
+fun main(args: Array<String>)) {
+    val name = readln()
+    val age = readln().toInt()
+
+    println("name: $name, age: $age")
+}
+```
+readln()을 사용하면 **with 스코프 함수를 안써도 됩니다.**
+
+### 람다식(lambda expression)을 사용하여 더 간결하게
+다음과 같은 x축, y축을 입력 받아 가공하는 프로그램을 작성한다고 합시다.
+첫 줄에는 점의 개수, 그 다음줄 부터는 x좌표, y좌표를 차례대로 입력받습니다. 
+```
+input
+4
+0 0
+0 1
+3 4
+5 7
+```
+이럴 땐 `StringTokenizer`를 사용하지 않고 람다식으로 간결하게 표현할 수 있습니다.
+
+
+```kotlin
+fun main(args: Array<String>) {
+    val n = readln().toInt()
+    val dots = ArrayList<Dot>()
+    repeat(n) {
+        val (x, y) = readln().split(" ").map { it.toInt() }
+        dots.add(Dot(x, y))
+    }
+    println(dots)
+}
+data class Dot(val x: Int, val y: Int)
+
+output: [Dot(x=0, y=0), Dot(x=0, y=1), Dot(x=3, y=4), Dot(x=5, y=7)]
+```
