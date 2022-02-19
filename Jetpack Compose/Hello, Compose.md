@@ -1,78 +1,186 @@
-![](https://media.vlpt.us/images/blucky8649/post/01be74b3-d19b-484e-be4a-699ec4fdc151/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-001.png)
-
-## What is Jetpack Compose?
-**Jetpack Compose**는 네이티브 UI를 빌드하기 위한 Android의 최신 도구 키트입니다. 기존 XML을 사용하여 UI를 제작하던 방식을 버리고, Kotlin API를 이용하여 더 빠르고, 직관적으로 UI를 구현할 수 있습니다.
-
-항상 xml를 이용하여 view Component를 구성하고, view 바인딩을 통해 코드로 view에 접근했다면, compose는 xml 파일 없이 MainActivity.kt에 ui를 코틀린으로 직접 구현 하는 방식입니다.
-
-따라서 이는 코틀린 네이티브로 빌드가 되기 때문에 더 빌드타임이 더 빨라지겠죠? 또한, xml로 구현하지 못하는 생동감 있는 ui도 구현할 수 있다고 하니, 안쓸 이유는 없겠네요.
-
-## Let's get started!
-
-### 1. Android Studio 최신버전 설치 
-Compose UI를 안정적으로 사용하기 위해서는 최신 버전(Bulblebee)의 안드로이드 스튜디오를 설치해주시는 것이 좋습니다.
-
-### 2. 프로젝트 생성
-File - New - New Project를 클릭하여 프로젝트 템플릿 선택 창으로 간 다음, `Empty Compose Activity`를 선택하여 프로젝트를 생성합니다.
-<div><img src="https://images.velog.io/images/blucky8649/post/1d16dfc3-e88e-4d60-a5df-6f6baea665a9/image.png"></div>
 
 
-### 3. MainActivity.kt 코드 한 눈에 보기
-프로젝트를 생성한다면 제일 먼저 보이는 화면입니다.
-`setContent`는 ui를 그릴 도화지, 그 안에 있는 요소는 도화지에 담을 콘텐츠라 보시면 될것 같습니다.
+### ![](https://images.velog.io/images/blucky8649/post/e037e888-2834-47fa-9a5a-f40a99cea0f1/image.png)  
+안녕하세요. 이번 포스팅은 위 사진과 같이 Compose를 사용하여 데스크탑용 스톱워치앱을 만들어보겠습니다.
 
-`modifier`는 컨텐츠를 담은 상위뷰의 성질(사이즈, 색 등..)의 정의를 담당합니다.
+## 준비물
+`Intellij` IDE 가 필요합니다. Jetbrains 홈페이지를 통해 다운받아줍니다.
 
-하단의 함수를 보시면 위에 `@Composable`이라는 애노테이션이 붙어있는 것을 보실 수 있습니다. compose ui에 대한 함수를 작성하기 위해서는 위에 해당 애노테이션을 붙여야 합니다.
+## 프로젝트 생성
+새 프로젝트 생성 창에서 Kotlin - **Compose Desktop Application uses Kotlin 1.5.31**을 눌러줍니다.
+(그 밑에 있는 멀티 플랫폼이랑 웹앱도 상당히 끌리는군요...)
+#### ![](https://images.velog.io/images/blucky8649/post/c73efd13-6a68-49a7-842c-d55f0a4d4b33/image.png)
 
-`@Preview`애노테이션은 Design탭에서 바로 결과물을 보여주기 위한 애노테이션입니다.
 
+## Main.kt
 ```kotlin
-package com.example.composepractice
-
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.composepractice.ui.theme.ComposePracticeTheme
+import androidx.compose.ui.window.Window
+import androidx.compose.ui.window.application
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            ComposePracticeTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(), // = match parent
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android") // Hello Android 라는 텍스트를 넣는다.
-                }
-            }
+@Composable
+@Preview
+fun App() {
+    var text by remember { mutableStateOf("Hello, World!") }
+
+    MaterialTheme {
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            val stopWatch = remember { StopWatch() }
+            StopWatchDisplay(
+                formattedTime = stopWatch.formattedTime,
+                onStartClick = stopWatch::start,
+                onPauseClick = stopWatch::pause,
+                onResetClick = stopWatch::reset
+            )
         }
+
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun main() = application {
+    Window(onCloseRequest = ::exitApplication) {
+        App()
+    }
 }
 
-@Preview(showBackground = true)
+```
+
+## StopWatch.kt
+Coroutines, State를 활용하여 이전 시간과 현재시간의 차이를 지속적으로 갱신해가면서 시간을 늘려가는 방식이네요.
+```kotlin
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import kotlinx.coroutines.*
+import java.time.Instant
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.util.*
+
+class StopWatch {
+
+    var formattedTime by mutableStateOf("00:00:000")
+    private var coroutineScope = CoroutineScope(Dispatchers.Main)
+    private var isActive = false
+
+    private var timeMillis = 0L
+    private var lastTimestamp = 0L
+
+    fun start() {
+        if (isActive) return
+
+        coroutineScope.launch {
+            lastTimestamp = System.currentTimeMillis()
+            this@StopWatch.isActive = true
+            while(this@StopWatch.isActive) {
+                delay(10L)
+                timeMillis += System.currentTimeMillis() - lastTimestamp
+                lastTimestamp = System.currentTimeMillis()
+                formattedTime = formatTime(timeMillis)
+            }
+        }
+    }
+    fun pause() {
+        isActive = false
+    }
+
+    fun reset() {
+        coroutineScope.cancel()
+        coroutineScope = CoroutineScope(Dispatchers.Main)
+        timeMillis = 0L
+        lastTimestamp = 0L
+        formattedTime = "00:00:000"
+        isActive = false
+    }
+
+    private fun formatTime(timeMillis: Long): String {
+        val localDateTime = LocalDateTime.ofInstant(
+            Instant.ofEpochMilli(timeMillis),
+            ZoneId.systemDefault()
+        )
+        val formatter = DateTimeFormatter.ofPattern(
+            "mm:ss:SSS",
+            Locale.getDefault()
+        )
+        return localDateTime.format(formatter)
+    }
+}
+```
+## StopWatchDisplay.kt
+화면에 보여질 UI를 꾸밉니다. 간단하네요..
+```kotlin
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
 @Composable
-fun DefaultPreview() {
-    ComposePracticeTheme {
-        Greeting("Android")
+fun StopWatchDisplay(
+    formattedTime: String,
+    onStartClick: () -> Unit,
+    onPauseClick: () -> Unit,
+    onResetClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = formattedTime,
+            fontWeight = FontWeight.Bold,
+            fontSize = 30.sp,
+            color = Color.Black
+        )
+        Spacer(Modifier.height(16.dp))
+        Row(
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment =  Alignment.CenterVertically,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Button(onStartClick) {
+                Text("Start")
+            }
+            Spacer(Modifier.width(16.dp))
+            Button(onPauseClick) {
+                Text("Pause")
+            }
+            Spacer(Modifier.width(16.dp))
+            Button(onResetClick) {
+                Text("Reset")
+            }
+
+        }
     }
 }
 ```
 
-다음 포스팅에는 Row, Column을 이용하여 텍스트를 세로, 혹은 가로로 배치해보면서 modifier를 수정해보는 시간을 가지겠습니다.
+## 한줄 평
+>코틀린을 배운지 한 달정도의 시간이 흐른 것 같은데요,
+>너무 배울 게 많아서 뭐 부터 배워야할지 모를 정도로 바쁜 나날을 보내고 있습니다.
+>코틀린 덕분에 올해는 정말 재미있는 한 해가 될 것 같아요.
 
-참고로 공부한 내용은 **Branch**로 나눠서 정리하고 있습니다.
+## Reference
+How to Make a Stop Watch With Compose Desktop - Philipp Lackner 
+https://www.youtube.com/watch?v=Iw4qFryus4Q
