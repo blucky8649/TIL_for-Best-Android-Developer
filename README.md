@@ -37,8 +37,10 @@
 
 ## Algorithm
 * 시간 복잡도란 무엇인가? feat. 빅오 표기법
-* 이분 탐색 
+* 이분 탐색: Upper Bound와 Lower Bound
 * 그래프 탐색 기법(DFS, BFS)
 * 다익스트라 알고리즘
 * 플로이드 와샬 알고리즘
 * 분할 정복이란? feat. Merge Sort
+* 유니온 파인드(Union Find)
+* 최소 스패닝 트리
