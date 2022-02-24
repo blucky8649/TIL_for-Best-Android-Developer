@@ -80,3 +80,5 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+## References
+[LiveData 개요 | Android Developers](https://developer.android.com/topic/libraries/architecture/livedata?hl=ko#kotlin)
