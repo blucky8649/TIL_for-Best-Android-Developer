@@ -41,7 +41,10 @@ implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
 class MainViewModel: ViewModel() {
   var result: MotableLiveData<String> = MutableLiveData()
   
-  fun setName(value: String) = result.value = value.toString() // LivaData 데이터 갱신
+  // LiveData 갱신
+  fun setName(value: String) {
+    result.value = value
+  }
   fun getName(): MutableLivaData<String> = result // LivaData 반환
 }
 ```
@@ -52,3 +55,28 @@ class MainViewModel: ViewModel() {
 * 액티비티나 프래그먼트에 활성 상태가 되는 즉시 표시할 수 있는 데이터가 포함되도록 하기 위함입니다.
 
 다음 코드는 `LiveData` 객체 관찰을 시작하는 방법을 보여줍니다.
+```kotlin
+class MainActivity : AppCompatActivity() {
+    private lateinit var viewModel: MainViewModel
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // 코드 생략..
+        
+        // UI 업데이트를 관찰하는 observer를 생성 
+        val resultObserver = Observer<String> {
+            result -> binding.tvResult.text = result.toString()
+        }
+
+        // observe()를 호출하면 onChanged() 콜백 함수가 즉시 호출되어 getName()에 저장된 최신 값을 제공한다.
+        viewModel.getName().observe(this, resultObserver)
+        binding.button.setOnClickListener {
+            if (binding.etName.text.toString().isNotEmpty()) {
+                viewModel.setName(binding.etName.text.toString())
+            } else {
+                binding.tvResult.text = "No value"
+            }
+        }
+    }
+}
+```
