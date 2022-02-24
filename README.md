@@ -16,6 +16,7 @@
 
 ## Android
 * [뷰 결합(View Binding)](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Android/%EB%B7%B0%20%EB%B0%94%EC%9D%B8%EB%94%A9.md)
+* [LiveData](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Android/LiveData.md)
 * RecyclerView란? ViewHolder는 무엇인가? 
 * 백스택(BackStack)은 무엇인가?
 * LiveData에 대해서 알아보자
