@@ -29,7 +29,7 @@
 
  ## 프로젝트 예제
  
- #### 종속 항목 추가
+ ### 종속 항목 추가
  앱 수준의 `build.gradle`에서 다음 종속 항목을 추가합니다.
 ```kotlin
 implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
