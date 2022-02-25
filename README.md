@@ -19,7 +19,6 @@
 * [LiveData](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Android/LiveData.md)
 * RecyclerView란? ViewHolder는 무엇인가? 
 * 백스택(BackStack)은 무엇인가?
-* LiveData에 대해서 알아보자
 * 클린 아키텍쳐(Clean Architecture)
 * MVC, MVP, MVVM 디자인 패턴에 대해 알아보자
 * 코루틴(Coroutines)이란?
