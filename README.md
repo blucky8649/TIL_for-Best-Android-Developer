@@ -17,7 +17,7 @@
 ## Android
 * [뷰 결합(View Binding)](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Android/%EB%B7%B0%20%EB%B0%94%EC%9D%B8%EB%94%A9.md)
 * [LiveData](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Android/LiveData.md)
-* [수명주기 인식 컴포넌트]()
+* [수명주기 인식 컴포넌트](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Android/%EC%88%98%EB%AA%85%EC%A3%BC%EA%B8%B0%EC%9D%B8%EC%8B%9D%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8.md)
 * RecyclerView란? ViewHolder는 무엇인가? 
 * 백스택(BackStack)은 무엇인가?
 * 클린 아키텍쳐(Clean Architecture)
