@@ -43,7 +43,7 @@
 
 ## Algorithm
 * 시간 복잡도란 무엇인가? feat. 빅오 표기법
-* 이분 탐색: Upper Bound와 Lower Bound
+* [이분탐색의 Lower bound와 Upper bound에 관해](https://destiny-snowboard-07a.notion.site/Binary-Search-71a860f7deb44bd7849982a3db79aa8d)
 * 그래프 탐색 기법(DFS, BFS)
 * 다익스트라 알고리즘
 * 플로이드 와샬 알고리즘
