@@ -27,7 +27,6 @@
 * 클린 아키텍쳐(Clean Architecture)
 * MVC, MVP, MVVM 디자인 패턴에 대해 알아보자
 * 코루틴(Coroutines)이란?
-* 코틀린 플로우(Kotlin Flow)
 
 ## Jetpack Compose
 * [Jetpack Compose 둘러보기](https://github.com/blucky8649/AboutComposeTodayLearned/blob/master/README.md)
