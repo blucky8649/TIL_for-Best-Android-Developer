@@ -16,6 +16,7 @@
 * Kotlin Flow에 대해
 
 ## Android
+* [DI(Depengency Injection, 의존성 주입)](https://velog.io/@blucky8649/DIDepengency-Injection-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A3%BC%EC%9E%85%EC%9D%B4%EB%9E%80)
 * [뷰 결합(View Binding)](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Android/%EB%B7%B0%20%EB%B0%94%EC%9D%B8%EB%94%A9.md)
 * [데이터 결합(Data Binding)](https://velog.io/@blucky8649/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B2%B0%ED%95%A9Data-Binding)
 * [LiveData](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Android/LiveData.md)
