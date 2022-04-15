@@ -6,6 +6,8 @@
 * 객체지향 5원칙 - SOLID
 * static 이란?
 * .equals()와 '=='의 차이
+* JVM이란?
+* 자바 메모리 구조
 
 ## Kotlin
 * [타입 선언과 연산자](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Kotlin/%ED%83%80%EC%9E%85%20%EC%84%A0%EC%96%B8%EA%B3%BC%20%EC%97%B0%EC%82%B0%EC%9E%90.md)  
