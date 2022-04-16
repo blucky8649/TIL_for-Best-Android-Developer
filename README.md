@@ -32,6 +32,7 @@
 * MVC, MVP, MVVM 디자인 패턴에 대해 알아보자
 * 코루틴(Coroutines)이란?
 * Testing
+* Work manager
 
 ## Jetpack Compose
 * [Jetpack Compose 둘러보기](https://github.com/blucky8649/AboutComposeTodayLearned/blob/master/README.md)
