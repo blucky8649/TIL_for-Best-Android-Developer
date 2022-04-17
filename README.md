@@ -16,6 +16,7 @@
 * Companion Object란? Java의 static과 비교
 * let, also, run, apply, with의 사용 방법 (Kotlin Scope Functions)
 * Kotlin Flow에 대해
+* 늦초기화(lateinit, lazy 차이)
 
 ## Android
 * [DI(Depengency Injection, 의존성 주입)](https://velog.io/@blucky8649/DIDepengency-Injection-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A3%BC%EC%9E%85%EC%9D%B4%EB%9E%80)
