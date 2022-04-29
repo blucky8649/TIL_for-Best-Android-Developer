@@ -45,6 +45,7 @@
 * [바텀 네비게이션 화면 전환 방법](https://github.com/blucky8649/AboutComposeTodayLearned/blob/BottomNavigationLayout/README.md)
 * [Compose로 스톱워치 PC앱 만드는법](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Jetpack%20Compose/PC%EC%9A%A9%20%EC%8A%A4%ED%86%B1%EC%9B%8C%EC%B9%98%EC%95%B1%20%EB%A7%8C%EB%93%A4%EA%B8%B0.md)
 * [기존앱에 Jetpack Compose 적용시키기 - ComposeView](https://velog.io/@blucky8649/Android-%EA%B8%B0%EC%A1%B4-%EC%95%B1%EC%97%90-Compose-UI-%EC%A0%81%EC%9A%A9-%EC%8B%9C%ED%82%A4%EA%B8%B0-ComposeView)
+* Side Effect
 
 ## Firebase
 * [안드로이드 스튜디오와 연동하는 방법](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Firebase/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%EC%99%80%20%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0)
