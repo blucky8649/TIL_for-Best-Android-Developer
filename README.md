@@ -54,6 +54,7 @@
 ## Algorithm
 * 시간 복잡도란 무엇인가? feat. 빅오 표기법
 * 에라토스테네스의 채
+* 유클리드 호제
 * 최대공약수, 최소공배수 구하기
 * [이분탐색의 Lower bound와 Upper bound에 관해](https://destiny-snowboard-07a.notion.site/Binary-Search-71a860f7deb44bd7849982a3db79aa8d)
 * 그래프 탐색 기법(DFS, BFS)
