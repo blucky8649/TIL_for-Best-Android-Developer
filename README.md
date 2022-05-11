@@ -4,7 +4,7 @@
 
 ## Java
 * 객체지향 5원칙 - SOLID
-* static 이란?
+* [Static in Java](https://velog.io/@blucky8649/Java-Static)
 * .equals()와 '=='의 차이
 * JVM이란?
 * 자바 메모리 구조
