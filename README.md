@@ -52,7 +52,7 @@
 * [Firestore 데이터 추가하는 방법](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Firebase/Firestore%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B6%94%EA%B0%80%ED%95%B4%EB%B3%B4%EA%B8%B0)
 
 ## Algorithm
-* 시간 복잡도란 무엇인가? feat. 빅오 표기법
+* 시간 복잡도란?
 * 에라토스테네스의 채
 * 최대공약수, 최소공배수 구하기
 * [이분탐색의 Lower bound와 Upper bound에 관해](https://destiny-snowboard-07a.notion.site/Binary-Search-71a860f7deb44bd7849982a3db79aa8d)
