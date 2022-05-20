@@ -51,6 +51,10 @@
 * [안드로이드 스튜디오와 연동하는 방법](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Firebase/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%EC%99%80%20%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0)
 * [Firestore 데이터 추가하는 방법](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Firebase/Firestore%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B6%94%EA%B0%80%ED%95%B4%EB%B3%B4%EA%B8%B0)
 
+## 디자인 패턴
+* Delegate Pattern
+* Factory Pattern
+
 ## Algorithm
 * 시간 복잡도란?
 * 재귀
