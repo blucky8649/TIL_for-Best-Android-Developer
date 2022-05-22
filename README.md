@@ -33,7 +33,6 @@
 * 백스택(BackStack)은 무엇인가?
 * MVC, MVP, MVVM 디자인 패턴에 대해 알아보자
 * 코루틴(Coroutines)이란?
-* Testing
 * Work manager
 
 ## Jetpack Compose
