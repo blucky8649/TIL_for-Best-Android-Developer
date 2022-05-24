@@ -49,7 +49,7 @@
 * [Firestore 데이터 추가하는 방법](https://github.com/blucky8649/TIL_for-Best-Android-Developer/blob/main/Firebase/Firestore%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B6%94%EA%B0%80%ED%95%B4%EB%B3%B4%EA%B8%B0)
 
 ## Design Pattern
-* [MVC, MVP, MVVM 디자인 패턴의 ](https://velog.io/@blucky8649/MVC-MVP-MVVM-%ED%8C%A8%ED%84%B4%EC%9D%98-%ED%8A%B9%EC%A7%95)
+* [MVC, MVP, MVVM 디자인 패턴의 특징](https://velog.io/@blucky8649/MVC-MVP-MVVM-%ED%8C%A8%ED%84%B4%EC%9D%98-%ED%8A%B9%EC%A7%95)
 * Delegate Pattern
 * Factory Pattern
 
