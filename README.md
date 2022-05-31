@@ -32,7 +32,6 @@
 * [네비게이션 컴포넌트와 Safe Args](https://velog.io/@blucky8649/Android-AAC-%EB%84%A4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8)
 * [Paging 3](https://velog.io/@blucky8649/Android-AAC-Paging-3)
 * [viewLifeCycleOwner in Fragment](https://velog.io/@blucky8649/Android-viewLifeCycleOwner)
-* RecyclerView란? ViewHolder는 무엇인가? 
 * 백스택(BackStack)은 무엇인가?
 * 코루틴(Coroutines)이란?
 * Context in Android
