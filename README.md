@@ -36,6 +36,7 @@
 * 코루틴(Coroutines)이란?
 * Context in Android
 * Work manager
+* HTTP 통신방법
 
 ## Jetpack Compose
 * [Jetpack Compose 둘러보기](https://github.com/blucky8649/AboutComposeTodayLearned/blob/master/README.md)
