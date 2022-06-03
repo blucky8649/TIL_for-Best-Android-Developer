@@ -19,6 +19,7 @@
 * Companion Object란? Java의 static과 비교
 * let, also, run, apply, with의 사용 방법 (Kotlin Scope Functions)
 * Kotlin Flow에 대해
+* 코루틴(Coroutines)이란?
 * 늦초기화(lateinit, lazy 차이)
 
 ## Android
@@ -33,7 +34,6 @@
 * [Paging 3](https://velog.io/@blucky8649/Android-AAC-Paging-3)
 * [viewLifeCycleOwner in Fragment](https://velog.io/@blucky8649/Android-viewLifeCycleOwner)
 * 백스택(BackStack)은 무엇인가?
-* 코루틴(Coroutines)이란?
 * Context in Android
 * Work manager
 * HTTP 통신방법
